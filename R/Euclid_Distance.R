@@ -1,0 +1,29 @@
+Euclid_Distance <- function(dataf){
+  #Compute the Euclidean Distance of a Dataframe
+  #Calculates by calculating the distance between the first row and each row in the dataframe
+  #Assuming the last column is a classifying vector
+
+  #Change dataframe into a matrix for ease of calculation
+  dataf <- as.matrix(dataf)
+
+  #Initialize dimensions of the dataframe
+  #dataframe is an n x p matrix after turning into matrix form
+  n <- nrow(dataf)
+  p <- ncol(dataf)
+
+  #Initialize vector that will store the distances
+  dist_Euc <- rep(0,n)
+
+  #Run for loop over the rows and calculate the distance
+
+  #Return Euclidean Distance vector
+  return(dist_Euc)
+}
+
+
+
+
+
+
+
+
