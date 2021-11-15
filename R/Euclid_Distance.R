@@ -1,3 +1,11 @@
+#' Euclid_Distance function
+#'
+#' @param dataf A numeric dataframe or a matrix of dimension n x p. Assuming last column of dataframe is classifying vector
+#'
+#' @return
+#' @export
+#'
+#' @examples
 Euclid_Distance <- function(dataf){
   #Compute the Euclidean Distance of a Dataframe
   #Calculates by calculating the distance between the first row and each row in the dataframe
