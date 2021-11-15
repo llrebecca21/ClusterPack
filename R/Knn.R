@@ -3,7 +3,7 @@
 #' @param a
 #' @param b
 #'
-#' @return
+#' @return "Hello"
 #' @export
 #'
 #' @examples
