@@ -1,6 +1,6 @@
 #' Euclid_Distance function
 #'
-#' @param mat_d
+#' @param mat_d n x p matrix that the Euclidean Distance will be run on
 #'
 #' @return
 #' @export
