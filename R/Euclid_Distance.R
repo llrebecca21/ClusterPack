@@ -7,12 +7,8 @@
 #'
 #' @examples
 Euclid_Distance <- function(dataf){
-  #Compute the Euclidean Distance of a Dataframe
-  #Calculates by calculating the distance between the first row and each row in the dataframe
-  #Assuming the last column is a classifying vector
-
-  #Change dataframe into a matrix for ease of calculation
-  dataf <- as.matrix(dataf)
+  #Compute the Euclidean Distance of a Matrix
+  #Calculates by calculating the distance between the first row and each row in the matrix
 
   #Initialize dimensions of the dataframe
   #dataframe is an n x p matrix after turning into matrix form
@@ -23,15 +19,9 @@ Euclid_Distance <- function(dataf){
   dist_Euc <- rep(0,n)
 
   #Run for loop over the rows and calculate the distance
-
+  for(i in 1:n){
+    dist_Euc[i] <- sqrt(sum((dataf[1,] - dataf[i,])^2))
+  }
   #Return Euclidean Distance vector
   return(dist_Euc)
 }
-
-
-
-
-
-
-
-
