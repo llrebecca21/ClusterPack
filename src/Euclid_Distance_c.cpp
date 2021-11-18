@@ -16,7 +16,7 @@ arma::colvec Euclid_Distance_c(const arma::mat& mat_d){
 
 //Run for loop over the rows and calculate the distance
       for(int i = 0; 1 < n; i++){
-        dist_Euc(i) = sqrt(arma::sum(pow((mat_d.row(1) - mat_d.row(i)),2)));
+        dist_Euc(i) = sqrt(arma::sum(square((mat_d.row(1) - mat_d.row(i)))));
       }
 //Return Euclidean Distance vector
       return(dist_Euc);
