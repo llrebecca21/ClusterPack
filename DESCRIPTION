@@ -1,12 +1,13 @@
 Package: ClusterPack
-Title: What the Package Does (One Line, Title Case)
+Title: Contains KNN algorithm, Euclidean Distance functions in R and C++
 Version: 0.0.0.9000
 Authors@R: 
     person(given = "Rebecca",
            family = "Lee",
            role = c("aut", "cre"),
            email = "llrebecca21@tamu.edu")
-Description: What the package does (one paragraph).
+Description: ClusterPack contains functions for KNN (K-Nearest Neighbors) algorithm,
+             K-Means algorithm. Also contains Euclidean distance function optimized in C++
 License: GPL (>= 3)
 Encoding: UTF-8
 LazyData: true
