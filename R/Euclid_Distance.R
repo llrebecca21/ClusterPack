@@ -2,7 +2,7 @@
 #'
 #' @param mat_d n x p matrix that the Euclidean Distance will be run on
 #'
-#' @return
+#' @return a vector of length n containing Euclidean Distances between first row and subsequent rows
 #' @export
 #'
 #' @examples
