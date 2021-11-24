@@ -3,13 +3,14 @@
 #' @param a
 #' @param b
 #'
-#' @return "Hello"
+#' @return
 #' @export
 #'
 #' @examples
 Knn <- function(a,b){
-  #Write code here
-  return("Hello")
+
+  #Call Euclid_Distance function
+
 }
 
 
