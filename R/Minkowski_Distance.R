@@ -1,3 +1,13 @@
+#' Minkowski distance function
+#'
+#' @param v1 1 x p vector
+#' @param v2 1 x p vector
+#' @param p  positive parameter
+#'
+#' @return vector of distances calculated
+#' @export
+#'
+#' @examples
 Minkowski_distance <- function(v1,v2,p){
   #Check that the p value is a viable input (greater than zero)
   if(p <= 0){
