@@ -7,10 +7,18 @@
 #' @export
 #'
 #' @examples
-Knn <- function(a,b){
+Knn <- function(X,observation,K){
+  #X : n x p data set
+  #observation :
 
-  #Call Euclid_Distance function
+  #Check compatibility of X and observation
 
+  #Calculate the distance by calling Euclid_Distance_c
+
+  #Calculate the closest neighbors
+    #sort the distances calculated
+
+  #Return the K data points that have the smallest distance
 }
 
 
