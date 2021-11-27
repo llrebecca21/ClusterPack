@@ -7,7 +7,7 @@
 #' @export
 #'
 #' @examples
-Knn <- function(X,observation,K, dist){
+Knn <- function(X,observation,K, dist, p = NULL){
   #X : n x p data set
   #observation :
 
