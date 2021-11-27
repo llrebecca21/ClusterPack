@@ -9,8 +9,8 @@
 #'
 #' @examples
 KNN_Euc <- function(X,observation,K){
-  #X : n x p data set
-  #observation :
+  #X : data frame
+  #observation : dataframe of observations
 
   #Check compatibility of X and observation
   if(ncol(X) != ncol(observation)){
