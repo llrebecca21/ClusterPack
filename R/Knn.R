@@ -7,7 +7,7 @@
 #' @export
 #'
 #' @examples
-Knn <- function(X,observation,K, dist, p = NULL){
+Knn <- function(X,observation,K){
   #X : n x p data set
   #observation :
 
@@ -16,7 +16,9 @@ Knn <- function(X,observation,K, dist, p = NULL){
     stop("The data does not have the same number of variables!")
   }
   #Calculate the distance by calling whichever distance function is called
-
+  if(dist = Euclid){
+    dist = apply(X, 1, )
+  }
   #Calculate the closest neighbors
     #sort the distances calculated
 
