@@ -7,13 +7,15 @@
 #' @export
 #'
 #' @examples
-Knn <- function(X,observation,K){
+Knn <- function(X,observation,K, dist){
   #X : n x p data set
   #observation :
 
   #Check compatibility of X and observation
-
-  #Calculate the distance by calling Euclid_Distance_c
+  if(ncol(X) != ncol(observation)){
+    stop("The data does not have the same number of variables!")
+  }
+  #Calculate the distance by calling whichever distance function is called
 
   #Calculate the closest neighbors
     #sort the distances calculated
