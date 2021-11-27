@@ -14,7 +14,7 @@ Manhattan_distance <- function(v1,v2){
   }else{
     # Calculate Manhattan Distance between two vectors:
     # \sum(|a-b|)
-    man_dist_vec <- sum(abs(a-b))
+    man_dist_vec <- sum(abs(v1-v2))
   }
   return(man_dist_vec)
 }
