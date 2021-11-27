@@ -1,13 +1,14 @@
-#' Knn function
+#' KNN_Euc function
 #'
-#' @param a
-#' @param b
+#' @param X
+#' @param observation
+#' @param K
 #'
 #' @return
 #' @export
 #'
 #' @examples
-Knn <- function(X,observation,K){
+KNN_Euc <- function(X,observation,K){
   #X : n x p data set
   #observation :
 
@@ -16,7 +17,7 @@ Knn <- function(X,observation,K){
     stop("The data does not have the same number of variables!")
   }
   #Calculate the distance by calling the Euclidean distance function
-  dist <- sapply(X,Euclidean_Distance_Gen(v1,v2))
+  dist <- apply(X,1,Euclidean_Distance_Gen, observation)
 
   #Calculate the closest neighbors
   #sort the distances calculated
@@ -27,17 +28,3 @@ Knn <- function(X,observation,K){
   #Return the K data points that have the smallest distance
   return(list(index_neighb, dist_ord))
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
