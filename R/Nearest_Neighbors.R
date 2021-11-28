@@ -1,7 +1,5 @@
 Nearest_Neighbors <- function(X, observation, K){
   #Calculate the nearest neighbors
-  #Initialize observation variable
-  observation <- X_pred[i, -y_index]
 
   #Check number of variables is the same
   if(ncol(X) != ncol(observation)){
@@ -13,7 +11,7 @@ Nearest_Neighbors <- function(X, observation, K){
   #Calculate the closest neighbors
   #sort the distances calculated
   distances <- sort(dist)[1:K]
-  index_neighb <- which(dist %in% dist_ord)
+  index_neighb <- which(dist %in% distances)
 }
 
 
