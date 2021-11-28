@@ -18,13 +18,15 @@ Prediction_NN <- function(X,Y, weights = NULL){
     if(is.null(weights) == FALSE){
       Weight_give <- 1 / (weights * sum(weights))
       pred <- weighted.mean(X[ ,Y], Weight_give)
+      #If not weights are provided calculate the standard way
+    } else{
+      pred <- mean(X[ ,Y])
     }
-    #If not weights are provided calculate the standard way
-
   }
 
 
   #If no prediction is given, give a warning
+  return(pred)
 }
 
 
