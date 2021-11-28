@@ -8,16 +8,15 @@
 #' @export
 #'
 #' @examples
-KNN_Euc <- function(X,observation,K){
+KNN_Euc <- function(X_test,X_pred, Y, K){
   #X : data frame
-  #observation : dataframe of observations
 
   #Check compatibility of X and observation
   if(ncol(X) != ncol(observation)){
     stop("The data does not have the same number of variables!")
   }
   #Calculate the distance by calling the Euclidean distance function
-  dist <- apply(X,1,Euclidean_Distance_Gen, observation)
+  dist <- apply(X,1,Euclid_Dist_c, observation)
 
   #Calculate the closest neighbors
   #sort the distances calculated
