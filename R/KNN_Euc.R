@@ -15,11 +15,24 @@ KNN_Euc <- function(X_test ,X_pred, Y, K){
 
   #Do any extra compatibility checks
 
-  #Initialize a prediction vector
+  #Initialize a prediction vector and any other variables before for loop
+  m = nrow(X_pred)
   predict_vec <- c()
   y_index <- which(colnames(X_pred) == Y)
-  #Create for loop to calculate the predictions by calculating nearest neighbors
+  X = X_test[ ,-y_index]
 
+  #Create for loop to calculate the predictions by calculating nearest neighbors
+  for(i in 1:m){
+    #Calculate the nearest neighbors
+    #Check number of variables is the same
+    if(ncol(X) != ncol(X_pred[i , -y_index])){
+      stop("The number of variables needs to be the same")
+    }
+
+
+
+
+  }
 
 
 
