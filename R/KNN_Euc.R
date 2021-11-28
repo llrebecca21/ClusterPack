@@ -8,7 +8,7 @@
 #' @export
 #'
 #' @examples
-KNN_Euc <- function(X_test ,X_pred, Y, K){
+KNN_Euc <- function(X_test ,X_pred, Y, K, pred_weights = FALSE){
   #X_test:
   #X_pred:
   #Y : observations
@@ -28,8 +28,7 @@ KNN_Euc <- function(X_test ,X_pred, Y, K){
 
     nearest <- Nearest_Neighbors(X, X_pred[i, -y_index], K)
 
-    # Calculate predictions
-    # Create a function for the prediction calculations
+    # Calculate predictions by calling Prediction_NN function
     predictions <-
 
 
