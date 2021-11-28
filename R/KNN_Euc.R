@@ -26,7 +26,7 @@ KNN_Euc <- function(X_test ,X_pred, Y, K){
 
     #Calculate distances and nearest neighbors by calling Nearest_Neighbors function
 
-    prediction <-
+    nearest <- Nearest_Neighbors(X, X_pred[i, -y_index], K)
 
 
   }
