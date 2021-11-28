@@ -28,15 +28,3 @@ Prediction_NN <- function(X,Y, weights = NULL){
   #If no prediction is given, give a warning
   return(pred)
 }
-
-
-
-
-
-
-
-
-
-
-
-
