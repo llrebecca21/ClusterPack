@@ -23,25 +23,10 @@ KNN_Euc <- function(X_test ,X_pred, Y, K){
 
   #Create for loop to calculate the predictions by calculating nearest neighbors
   for(i in 1:m){
-    #Calculate the nearest neighbors
-    #Initialize observation variable
-    observation <- X_pred[i, -y_index]
 
-    #Check number of variables is the same
-    if(ncol(X) != ncol(observation)){
-      stop("The number of variables needs to be the same")
-    }
-    #Calculate the distance by calling the Euclidean distance function
-    dist <- apply(X,1,Euclid_Distance, observation)
+    #Calculate by calling Nearest_Neighbors function
 
-    #Calculate the distance by calling the Euclidean distance function
-    dist <- apply(X,1,Euclid_Dist_c, observation)
-
-    #Calculate the closest neighbors
-    #sort the distances calculated
-    dist_ord <- sort(dist)[1:K]
-
-    index_neighb <- which(dist %in% dist_ord)
+    prediction <-
 
 
   }
