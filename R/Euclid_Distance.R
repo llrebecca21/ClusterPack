@@ -13,7 +13,6 @@ Euclid_Distance <- function(mat_d){
   #Initialize dimensions of the dataframe
   #dataframe is an n x p matrix after turning into matrix form
   n <- nrow(mat_d)
-  p <- ncol(mat_d)
 
   #Initialize vector that will store the distances
   dist_Euc <- rep(0,n)
