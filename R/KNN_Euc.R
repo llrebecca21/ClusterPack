@@ -8,13 +8,22 @@
 #' @export
 #'
 #' @examples
-KNN_Euc <- function(X_test,X_pred, Y, K){
-  #X : data frame
+KNN_Euc <- function(X_test ,X_pred, Y, K){
+  #X_test:
+  #X_pred:
 
-  #Check compatibility of X and observation
-  if(ncol(X) != ncol(observation)){
-    stop("The data does not have the same number of variables!")
-  }
+
+  #Do any extra compatibility checks
+
+  #Initialize a prediction vector
+
+  #Create for loop to calculate the predictions by calculating nearest neighbors
+
+
+
+
+
+
   #Calculate the distance by calling the Euclidean distance function
   dist <- apply(X,1,Euclid_Dist_c, observation)
 
