@@ -12,6 +12,8 @@ Nearest_Neighbors <- function(X, observation, K){
   #sort the distances calculated
   distances <- sort(dist)[1:K]
   index_neighb <- which(dist %in% distances)
+
+  return(list(distances, index_neighb))
 }
 
 
