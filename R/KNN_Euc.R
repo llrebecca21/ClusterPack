@@ -1,8 +1,10 @@
 #' KNN_Euc function
 #'
-#' @param X
-#' @param observation
+#' @param X_test
+#' @param X_pred
+#' @param Y
 #' @param K
+#' @param pred_weights
 #'
 #' @return
 #' @export
