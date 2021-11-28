@@ -29,7 +29,11 @@ KNN_Euc <- function(X_test ,X_pred, Y, K, pred_weights = FALSE){
     nearest <- Nearest_Neighbors(X, X_pred[i, -y_index], K)
 
     # Calculate predictions by calling Prediction_NN function
-    predictions <-
+    if(pred_weights = TRUE){
+      pred <- Prediction_NN(X_test[nearest[[1]], ], Y, nearest[[2]])
+    }else{
+      pred <- Prediction_NN(X_test[nearest[[1]], ], Y)
+    }
 
 
   }
