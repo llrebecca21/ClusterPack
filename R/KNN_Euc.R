@@ -11,13 +11,15 @@
 KNN_Euc <- function(X_test ,X_pred, Y, K){
   #X_test:
   #X_pred:
-
+  #Y : observations
 
   #Do any extra compatibility checks
 
   #Initialize a prediction vector
-
+  predict_vec <- c()
+  y_index <- which(colnames(X_pred) == Y)
   #Create for loop to calculate the predictions by calculating nearest neighbors
+
 
 
 
