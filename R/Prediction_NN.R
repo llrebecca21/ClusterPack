@@ -1,8 +1,11 @@
 Prediction_NN <- function(X,Y, weights = NULL){
   #Make sure X is a matrix
-
+  X <- as.matrix(X)
   #If X[, Y] is a factor type:
-
+  if(is.factor(X[ ,Y])){
+    group <- table(X[ ,Y])
+    pred <- names(group[group == max(group)])
+  }
   #If X[, Y] is a character type:
 
   #If X[, Y] is a numeric type:
