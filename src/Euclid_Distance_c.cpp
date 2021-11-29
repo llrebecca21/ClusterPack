@@ -11,12 +11,3 @@ double Euclid_Distance_c(const arma::colvec& v1, const arma::colvec& v2){
 //Return Euclidean Distance vector
       return(dist_Euc);
 }
-
-/***R
-set.seed(21)
-v1 <- c(rnorm(1:10))
-v2 <- c(rnorm(1:10))
-
-print(Euclid_Distance_c(v1,v2))
-
-*/
