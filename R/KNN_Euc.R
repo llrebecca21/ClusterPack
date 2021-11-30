@@ -11,9 +11,6 @@
 #'
 #' @examples
 KNN_Euc <- function(X_test ,X_pred, Y, K, pred_weights = FALSE){
-  #X_test:
-  #X_pred:
-  #Y : observations
 
   #Do any extra compatibility checks
 
@@ -27,8 +24,9 @@ KNN_Euc <- function(X_test ,X_pred, Y, K, pred_weights = FALSE){
   for(i in 1:m){
 
     #Calculate distances and nearest neighbors by calling Nearest_Neighbors function
-
+    #Nearest_Neighbors returns a list with distances and index_of_neighbors
     nearest <- Nearest_Neighbors(X = X, observation = X_pred[i, -y_index], K = K)
+    #print(nearest)
 
     # Calculate predictions by calling Prediction_NN function
     if(pred_weights == TRUE){
