@@ -6,7 +6,8 @@ Nearest_Neighbors <- function(X, observation, K){
     stop("The number of variables needs to be the same")
   }
   #Calculate the distance by calling the Euclidean distance function
-  dist <- apply(X,1,Euclid_Distance, observation)
+  # Apply Euclid_Distance_c over the rows of X
+  dist <- apply(X = X, MARGIN = 1, FUN = Euclid_Distance_c, observation)
 
   #Calculate the closest neighbors
   #sort the distances calculated
