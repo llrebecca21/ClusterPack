@@ -19,6 +19,7 @@ KNN_Euc <- function(X_test ,X_pred, Y, K, pred_weights = FALSE){
   predict_vec <- c()
   y_index <- which(colnames(X_pred) == Y)
   X = X_test[ ,-y_index]
+  print(X)
 
   #Create for loop to calculate the predictions by calculating nearest neighbors
   for(i in 1:m){
@@ -29,10 +30,10 @@ KNN_Euc <- function(X_test ,X_pred, Y, K, pred_weights = FALSE){
 
     # Calculate predictions by calling Prediction_NN function
     if(pred_weights == TRUE){
-      pred <- Prediction_NN(X = X_test[nearest[[1]], ], Y = Y, weights = nearest[[2]])
+      predict_vec[i] <- Prediction_NN(X = X_test[nearest[[1]], ], Y = Y, weights = nearest[[2]])
     }else{
-      pred <- Prediction_NN(X = X_test[nearest[[1]], ], Y = Y)
+      predict_vec[i] <- Prediction_NN(X = X_test[nearest[[1]], ], Y = Y)
     }
   }
-  return(pred)
+  return(predict_vec)
 }
