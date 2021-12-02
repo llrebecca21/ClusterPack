@@ -1,26 +1,25 @@
 Prediction_NN <- function(X,Y, weights = NULL){
-  #Make sure X is a matrix
-  X <- as.matrix(X)
-  #If X[, Y] is a factor type:
-  if(is.factor(X[ ,Y])){
-    group <- table(X[ ,Y])
-    pred <- names(group[group == max(group)])
+
+  # Description of inputs:
+  # X = X_test[nearest[[1]]
+  # Y = Y_test
+
+  #If Y is a factor type:
+  if(is.factor(Y) | is.character(Y)){
+    group <- table(Y)
+    pred <- names(group[group == max(group)])[1]
   }
-  #If X[, Y] is a character type:
-  if(is.character(X[ ,Y])){
-    group <- table(X[ ,Y])
-    pred <- names(group[group == max(group)])
-  }
-  #If X[, Y] is a numeric type:
-  if(is.numeric(X[ ,Y])){
+
+  #If Y is a numeric type:
+  if(is.numeric(Y)){
     #Calculate using weights if provided
     #determine easier way to state this
     if(is.null(weights) == FALSE){
-      Weight_give <- 1 / (weights * sum(weights))
-      pred <- weighted.mean(X[ ,Y], Weight_give)
-      #If not weights are provided calculate the standard way
+      Weight_give <- 1 / (weights)
+      pred <- weighted.mean(Y, Weight_give)
+      #If not, weights are provided calculate the standard way
     } else{
-      pred <- mean(X[ ,Y])
+      pred <- mean(Y)
     }
   }
 
