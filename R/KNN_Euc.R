@@ -31,11 +31,11 @@ KNN_Euc <- function(X_test ,X_pred, Y_test, Y_pred, K, pred_weights = FALSE){
   Y_pred <- as.vector(Y_pred)
 
   #compatibility checks for dimensionality
-  if(nrows(X_test) != length(Y_test)){
+  if(nrow(X_test) != length(Y_test)){
     stop("The number of rows of X_test does not match the length of Y_test")
   }
 
-  if(nrows(X_pred) != length(Y_pred)){
+  if(nrow(X_pred) != length(Y_pred)){
     stop("The number of rows of X_pred does not match the length of Y_pred")
   }
 
@@ -55,9 +55,9 @@ KNN_Euc <- function(X_test ,X_pred, Y_test, Y_pred, K, pred_weights = FALSE){
 
     # Calculate predictions by calling Prediction_NN function
     if(pred_weights == TRUE){
-      predict_vec[i] <- Prediction_NN(X = X_test[nearest[[1]], , drop = FALSE], Y = Y_test, weights = nearest[[2]])
+      predict_vec[i] <- Prediction_NN(X = X_test[nearest[[1]], , drop = FALSE], Y = Y_test[nearest[[1]]], weights = nearest[[2]])
     }else{
-      predict_vec[i] <- Prediction_NN(X = X_test[nearest[[1]], , drop = FALSE], Y = Y_test)
+      predict_vec[i] <- Prediction_NN(X = X_test[nearest[[1]], , drop = FALSE], Y = Y_test[nearest[[1]]])
     }
   }
   return(predict_vec)
