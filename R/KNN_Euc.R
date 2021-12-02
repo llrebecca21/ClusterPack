@@ -13,11 +13,21 @@
 #' @examples
 KNN_Euc <- function(X_test ,X_pred, Y_test, Y_pred, K, pred_weights = FALSE){
 
-  # Coerce dataframe inputs into matrices or vectors
-  X_test <- as.matrix(X_test)
+
+  if(is.vector(X_test)){
+    X_test <- as.matrix(X_test, nrow = 1)
+  }else{
+    X_test <- as.matrix(X_test)
+  }
+
   Y_test <- as.vector(Y_test)
 
-  X_pred <- as.matrix(X_pred)
+  if(is.vector(X_pred)){
+    X_pred <- as.matrix(X_pred, nrow = 1)
+  }else{
+    X_pred <- as.matrix(X_pred)
+  }
+
   Y_pred <- as.vector(Y_pred)
 
   #compatibility checks for dimensionality
@@ -45,9 +55,9 @@ KNN_Euc <- function(X_test ,X_pred, Y_test, Y_pred, K, pred_weights = FALSE){
 
     # Calculate predictions by calling Prediction_NN function
     if(pred_weights == TRUE){
-      predict_vec[i] <- Prediction_NN(X = X_test[nearest[[1]], ], Y = Y_test, weights = nearest[[2]])
+      predict_vec[i] <- Prediction_NN(X = X_test[nearest[[1]], , drop = FALSE], Y = Y_test, weights = nearest[[2]])
     }else{
-      predict_vec[i] <- Prediction_NN(X = X_test[nearest[[1]], ], Y = Y_test)
+      predict_vec[i] <- Prediction_NN(X = X_test[nearest[[1]], , drop = FALSE], Y = Y_test)
     }
   }
   return(predict_vec)
