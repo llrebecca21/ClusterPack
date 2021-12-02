@@ -28,7 +28,7 @@
 #' returns the following:
 #' [1] "setosa"   "versicolor"   "virginica"   "virginica"  "virginica"   "virginica"
 #' [7] ""virginica"   "virginica"   "versicolor"   "virginica"
-KNN_Euc <- function(X_test ,X_pred, Y_test, Y_pred, K, method = c("Euc", "Man"),pred_weights = FALSE){
+KNN_Euc <- function(X_test ,X_pred, Y_test, Y_pred, K, method = c("Euc", "Man", "Min"),pred_weights = FALSE, p = NULL){
 
   if(is.numeric(K) == FALSE){
     stop("K needs to be an integer")
@@ -75,8 +75,11 @@ KNN_Euc <- function(X_test ,X_pred, Y_test, Y_pred, K, method = c("Euc", "Man"),
 
     #Calculate distances and nearest neighbors by calling Nearest_Neighbors function
     #Nearest_Neighbors returns a list with distances and index_of_neighbors
-    nearest <- Nearest_Neighbors(X = X_test, observation = X_pred[i, ], K = K , method = method)
-
+    if(is.null(p) == TRUE){
+      nearest <- Nearest_Neighbors(X = X_test, observation = X_pred[i, ], K = K , method = method)
+    }else{
+      nearest <- Nearest_Neighbors(X = X_test, observation = X_pred[i, ], K = K , method = method, p = p)
+    }
     # Calculate predictions by calling Prediction_NN function
     if(pred_weights == TRUE){
       predict_vec[i] <- Prediction_NN(X = X_test[nearest[[1]], , drop = FALSE], Y = Y_test[nearest[[1]]], weights = nearest[[2]])
