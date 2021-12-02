@@ -22,8 +22,5 @@ Prediction_NN <- function(X,Y, weights = NULL){
       pred <- mean(Y)
     }
   }
-
-
-  #If no prediction is given, give a warning
   return(pred)
 }
