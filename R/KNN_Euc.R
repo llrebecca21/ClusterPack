@@ -28,6 +28,9 @@ KNN_Euc <- function(X_test ,X_pred, Y_test, Y_pred, K, pred_weights = FALSE){
     stop("The number of rows of X_pred does not match the length of Y_pred")
   }
 
+  if(ncol(X_test) != ncol(X_pred)){
+    stop("The number of columns of X_test and X_pred are not equal")
+  }
   #Initialize a prediction vector and any other variables before for loop
   m = nrow(X_pred)
   predict_vec <- c()
