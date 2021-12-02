@@ -1,14 +1,12 @@
 Nearest_Neighbors <- function(X, observation, K){
   #Calculate the nearest neighbors
 
-  #Check number of variables is the same
-  if(ncol(X) != ncol(observation)){
-    stop("The number of variables needs to be the same")
-  }
-  #Calculate the distance by calling the Euclidean distance function
+  #X is the X_test matrix
+  #observation is a single row of X_pred
+
+  # Calculate the distance by calling the Euclidean distance function
   # Apply Euclid_Distance_c over the rows of X
-  X <- as.matrix(X)
-  dist <- apply(X = X, MARGIN = 1, FUN = Euclid_Distance, observation)
+  dist <- Euclid_Distance_c(X, observation)
 
   #Calculate the closest neighbors
   #sort the distances calculated
