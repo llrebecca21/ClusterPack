@@ -30,6 +30,13 @@
 #' [7] ""virginica"   "virginica"   "versicolor"   "virginica"
 KNN_Euc <- function(X_test ,X_pred, Y_test, Y_pred, K, pred_weights = FALSE){
 
+  if(is.integer(K) == FALSE){
+    stop("K needs to be an integer")
+  }
+
+  if(K <= 0){
+    stop("K needs to be greater than zero")
+  }
 
   if(is.vector(X_test)){
     X_test <- as.matrix(X_test, nrow = 1)
