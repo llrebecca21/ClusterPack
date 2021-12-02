@@ -2,7 +2,8 @@
 #'
 #' @param X_test
 #' @param X_pred
-#' @param Y
+#' @param Y_test
+#' @param Y_pred
 #' @param K
 #' @param pred_weights
 #'
@@ -12,7 +13,7 @@
 #' @examples
 KNN_Euc <- function(X_test ,X_pred, Y_test, Y_pred, K, pred_weights = FALSE){
 
-  #Do any extra compatibility checks
+  # Coerce dataframe inputs into matrices or vectors
   X_test <- as.matrix(X_test)
   Y_test <- as.vector(Y_test)
 
