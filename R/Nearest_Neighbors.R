@@ -15,10 +15,3 @@ Nearest_Neighbors <- function(X, observation, K){
 
   return(list(index_of_neighbors = index_neighb, distances = distances))
 }
-
-
-
-
-
-
-
