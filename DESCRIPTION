@@ -1,6 +1,6 @@
 Package: ClusterPack
-Title: Collection of Cluster algorithms and distance functions
-Version: 0.0.1
+Title: Contains KNN and K-Means algorithms and distance functions
+Version: 0.1.0
 Authors@R: 
     person(given = "Rebecca",
            family = "Lee",
