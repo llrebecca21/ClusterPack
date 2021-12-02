@@ -1,4 +1,4 @@
-Nearest_Neighbors <- function(X, observation, K, method){
+Nearest_Neighbors <- function(X, observation, K, method, p = NULL){
   #Calculate the nearest neighbors
 
   #X is the X_test matrix
@@ -15,6 +15,10 @@ Nearest_Neighbors <- function(X, observation, K, method){
     dist <- Manhattan_Distance_c(X, observation)
   }
 
+  if(method == "Min"){
+    #Apply Minkowski_Distance_c over the rows of X
+    dist <- Minkowski_Distance_c(X, observation, p)
+  }
 
   #Calculate the closest neighbors
   #sort the distances calculated
