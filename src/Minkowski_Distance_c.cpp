@@ -2,16 +2,17 @@
 using namespace Rcpp;
 
 // [[Rcpp::export]]
-arma::colvec Minkowski_Distance_c(const arma::uvec& v1, const arma::uvec& v2, int p){
-      // calculate the Minkowski Distance between two vectors
+arma::colvec Minkowski_Distance_c(const arma::mat& X, const arma::rowvec& v, int p){
+      // calculate the Minkowski Distance between a Matrix and a vector
 
-      //initialize the vector that will store the distances
-      arma::colvec Mink_dist_vec;
+      // pow(sum(pow(abs(X -v),p)),1/p)
+      arma::mat min_mat = X.each_row() - v;
+                min_mat = abs(min_mat);
+                min_mat = pow(min_mat, p);
+      arma::colvec min_vec = arma::sum(min_mat, 1);
+               min_mat = pow(min_vec, 1/p);
 
-      // sum(pow(abs(pow((v1-v2),p)),1/p))
-      Mink_dist_vec = arma::sum(pow(abs(pow((v1-v2),p)),1/p));
-
-      return(Mink_dist_vec);
+      return(min_vec);
 }
 
 
