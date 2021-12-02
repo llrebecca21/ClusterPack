@@ -10,23 +10,28 @@
 #' @export
 #'
 #' @examples
-KNN_Euc <- function(X_test ,X_pred, Y, K, pred_weights = FALSE){
+KNN_Euc <- function(X_test ,X_pred, Y_test, Y_pred, K, pred_weights = FALSE){
 
   #Do any extra compatibility checks
+  X_test <- as.matrix(X_test)
+  Y_test <- as.vector(Y_test)
+
+  X_pred <- as.matrix(X_pred)
+  Y_pred <- as.vector(Y_pred)
 
   #Initialize a prediction vector and any other variables before for loop
   m = nrow(X_pred)
   predict_vec <- c()
-  y_index <- which(colnames(X_pred) == Y)
-  X = X_test[ ,-y_index]
-  print(X)
+  X_test <- X_test[ , -ncol(X_test)]
+
+  X_pred <- as.matrix(X_pred)
 
   #Create for loop to calculate the predictions by calculating nearest neighbors
   for(i in 1:m){
 
     #Calculate distances and nearest neighbors by calling Nearest_Neighbors function
     #Nearest_Neighbors returns a list with distances and index_of_neighbors
-    nearest <- Nearest_Neighbors(X = X, observation = X_pred[i, -y_index], K = K)
+    nearest <- Nearest_Neighbors(X = X, observation = X_pred[i, -], K = K)
 
     # Calculate predictions by calling Prediction_NN function
     if(pred_weights == TRUE){
