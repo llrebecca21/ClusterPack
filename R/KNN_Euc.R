@@ -1,16 +1,33 @@
 #' KNN_Euc function
 #'
-#' @param X_test
-#' @param X_pred
-#' @param Y_test
-#' @param Y_pred
-#' @param K
-#' @param pred_weights
+#' @param X_test n x p length numeric dataframe or matrix
+#' @param X_pred r x p length numeric dataframe or matrix
+#' @param Y_test n x 1 length dataframe or matrix  label column which is the label column for the X_test dataframe
+#' @param Y_pred r x 1 length dataframe or matrix label column which is the label column for the X_pred dataframe
+#' @param K      integer value; the number of neighbors
+#' @param pred_weights default is FALSE; if TRUE will calculate weights for predictions of K-nearest Neighbors
+#'                     by calculating the inverse of the distances of the K-nearest neighbors if Y_test is of numeric type.
 #'
-#' @return
+#' @return  r x 1 vector of predicted labels for the X_pred dataframe
 #' @export
 #'
 #' @examples
+#' Using the built-in Iris dataframe
+#'
+#' set.seed(1234)
+#' n_fit = 10
+#' train_ind = sample(1:nrow(iris),n_fit)
+#' X_test = iris[-train_ind, -ncol(iris)]
+#' X_pred = iris[train_ind, -ncol(iris)]
+#'
+#' Y_test = iris[-train_ind, ncol(iris)]
+#' Y_pred = iris[train_ind, ncol(iris)]
+#'
+#' KNN_Euc(X_test = X_test, X_pred = X_pred, Y_test = Y_test, Y_pred = Y_pred, K = 5)
+#'
+#' returns the following:
+#' [1] "setosa"   "versicolor"   "virginica"   "virginica"  "virginica"   "virginica"
+#' [7] ""virginica"   "virginica"   "versicolor"   "virginica"
 KNN_Euc <- function(X_test ,X_pred, Y_test, Y_pred, K, pred_weights = FALSE){
 
 
