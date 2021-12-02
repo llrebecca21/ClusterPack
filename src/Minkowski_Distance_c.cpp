@@ -14,12 +14,3 @@ arma::colvec Minkowski_Distance_c(const arma::mat& X, const arma::rowvec& v, int
 
       return(min_vec);
 }
-
-
-
-
-
-
-
-
-
