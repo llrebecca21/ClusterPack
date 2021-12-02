@@ -2,21 +2,18 @@
 using namespace Rcpp;
 
 // [[Rcpp::export]]
-arma::colvec Manhattan_Distance_c(const arma::uvec& v1, const arma::uvec& v2 ){
-  //Compute Manhattan Distance between vectors v1 and v2
+arma::colvec Manhattan_Distance_c(const arma::mat& X, const arma::rowvec& v ){
+  //Compute Manhattan Distance between X and v
   //initialize the vector that will store the distances
-  arma::colvec man_dist_vec;
+
+  // Man vectorized version
+  arma::mat man_mat = X.each_row() - v;
+            man_mat = abs(man_mat);
+  arma::colvec man_vec = arma::sum(man_mat,1);
+
 
   //Compute the distances
-  man_dist_vec = arma::sum(abs(v1-v2));
+  //man_dist_vec = arma::sum(abs(X-v));
 
-  return(man_dist_vec);
+  return(man_vec);
 }
-
-
-
-
-
-
-
-
