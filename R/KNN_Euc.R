@@ -28,9 +28,9 @@
 #' returns the following:
 #' [1] "setosa"   "versicolor"   "virginica"   "virginica"  "virginica"   "virginica"
 #' [7] ""virginica"   "virginica"   "versicolor"   "virginica"
-KNN_Euc <- function(X_test ,X_pred, Y_test, Y_pred, K, pred_weights = FALSE){
+KNN_Euc <- function(X_test ,X_pred, Y_test, Y_pred, K, method = c("Euc", "Man"),pred_weights = FALSE){
 
-  if(is.integer(K) == FALSE){
+  if(is.numeric(K) == FALSE){
     stop("K needs to be an integer")
   }
 
@@ -69,13 +69,13 @@ KNN_Euc <- function(X_test ,X_pred, Y_test, Y_pred, K, pred_weights = FALSE){
   #Initialize a prediction vector and any other variables before for loop
   m = nrow(X_pred)
   predict_vec <- c()
-
+  method = match.arg(method)
   #Create for loop to calculate the predictions by calculating nearest neighbors
   for(i in 1:m){
 
     #Calculate distances and nearest neighbors by calling Nearest_Neighbors function
     #Nearest_Neighbors returns a list with distances and index_of_neighbors
-    nearest <- Nearest_Neighbors(X = X_test, observation = X_pred[i, ], K = K)
+    nearest <- Nearest_Neighbors(X = X_test, observation = X_pred[i, ], K = K , method = method)
 
     # Calculate predictions by calling Prediction_NN function
     if(pred_weights == TRUE){
