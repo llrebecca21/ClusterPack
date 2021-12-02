@@ -1,16 +1,16 @@
-#' Manhattan_distance function
+#' Manhattan_Distance function
 #'
-#' @param v1 vector of length 1 x p
-#' @param v2 vector of length 1 x p
+#' @param X
+#' @param v
 #'
-#' @return vector of length 1 x 1 that computes the distance between v1 and v2
+#' @return
 #' @export
 #'
 #' @examples
-Manhattan_distance <- function(v1,v2){
+Manhattan_Distance <- function(X,v){
   # Check that the length of the vectors v1 and v2 are the same length
-  if (length(v1) != length(v2)){
-    stop('Length of the vectors needs to be equal')
+  if (nrows(X) != length(v)){
+    stop('The number of rows of X needs to be equal to the length of v')
   }else{
     # Calculate Manhattan Distance between two vectors:
     # \sum(|a-b|)
@@ -18,20 +18,3 @@ Manhattan_distance <- function(v1,v2){
   }
   return(man_dist_vec)
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
