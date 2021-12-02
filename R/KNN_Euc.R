@@ -19,6 +19,15 @@ KNN_Euc <- function(X_test ,X_pred, Y_test, Y_pred, K, pred_weights = FALSE){
   X_pred <- as.matrix(X_pred)
   Y_pred <- as.vector(Y_pred)
 
+  #compatibility checks for dimensionality
+  if(nrows(X_test) != length(Y_test)){
+    stop("The number of rows of X_test does not match the length of Y_test")
+  }
+
+  if(nrows(X_pred) != length(Y_pred)){
+    stop("The number of rows of X_pred does not match the length of Y_pred")
+  }
+
   #Initialize a prediction vector and any other variables before for loop
   m = nrow(X_pred)
   predict_vec <- c()
