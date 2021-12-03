@@ -32,19 +32,3 @@ KMEANS_Euc <- function(X, K, M = NULL, numIter = 100) {
   # Return the class assignments
   return(Y)
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
