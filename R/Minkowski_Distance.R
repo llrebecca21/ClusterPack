@@ -1,41 +1,16 @@
-#' Minkowski distance function
+#' Minkowski Distance function
 #'
-#' @param v1 1 x p vector
-#' @param v2 1 x p vector
-#' @param p  positive parameter
+#' @param X
+#' @param v
+#' @param p
 #'
-#' @return vector of distances calculated
+#' @return
 #' @export
 #'
 #' @examples
-Minkowski_distance <- function(v1,v2,p){
-  #Check that the p value is a viable input (greater than zero)
-  if(p <= 0){
-    stop('p must be greater than zero')
-
-  }if(length(v1) != length(v2)){
-    stop('The length of the vectors need to be equal')
-  }if(p == Inf){
-    #Calculate Sup-norm
-    return(max(abs(v1-v2)))
-  }else{
+Minkowski_distance <- function(X,v,p){
     #Calculate Minkowski distance between the two vectors
-    # \sum(|a-b|^p)^(1/p)
-    Mink_dist_vec <- sum(abs(v1-v2)^p)^(1/p)
-  }
+    Mink_dist_vec <- Minkowski_Distance_c(X,v,p)
+
   return(Mink_dist_vec)
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
