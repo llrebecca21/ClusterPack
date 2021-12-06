@@ -28,62 +28,61 @@
 #' returns the following:
 #' [1] "setosa"   "versicolor"   "virginica"   "virginica"  "virginica"   "virginica"
 #' [7] ""virginica"   "virginica"   "versicolor"   "virginica"
-KNN_Euc <- function(X_test ,X_pred, Y_test, Y_pred, K, method = c("Euc", "Man", "Min", "Cos"),pred_weights = FALSE, p = NULL){
-
-  if(is.numeric(K) == FALSE){
+KNN_Euc <- function(X_test, X_pred, Y_test, Y_pred, K, method = c("Euc", "Man", "Min", "Cos"), pred_weights = FALSE, p = NULL) {
+  if (is.numeric(K) == FALSE) {
     stop("K needs to be an integer")
   }
 
-  if(K <= 0){
+  if (K <= 0) {
     stop("K needs to be greater than zero")
   }
 
-  if(is.vector(X_test)){
+  if (is.vector(X_test)) {
     X_test <- as.matrix(X_test, nrow = 1)
-  }else{
+  } else {
     X_test <- as.matrix(X_test)
   }
 
   Y_test <- as.vector(Y_test)
 
-  if(is.vector(X_pred)){
+  if (is.vector(X_pred)) {
     X_pred <- as.matrix(X_pred, nrow = 1)
-  }else{
+  } else {
     X_pred <- as.matrix(X_pred)
   }
 
   Y_pred <- as.vector(Y_pred)
 
-  #compatibility checks for dimensionality
-  if(nrow(X_test) != length(Y_test)){
+  # compatibility checks for dimensionality
+  if (nrow(X_test) != length(Y_test)) {
     stop("The number of rows of X_test does not match the length of Y_test")
   }
 
-  if(nrow(X_pred) != length(Y_pred)){
+  if (nrow(X_pred) != length(Y_pred)) {
     stop("The number of rows of X_pred does not match the length of Y_pred")
   }
 
-  if(ncol(X_test) != ncol(X_pred)){
+  if (ncol(X_test) != ncol(X_pred)) {
     stop("The number of columns of X_test and X_pred are not equal")
   }
-  #Initialize a prediction vector and any other variables before for loop
-  m = nrow(X_pred)
+  # Initialize a prediction vector and any other variables before for loop
+  m <- nrow(X_pred)
   predict_vec <- c()
-  method = match.arg(method)
-  #Create for loop to calculate the predictions by calculating nearest neighbors
-  for(i in 1:m){
+  method <- match.arg(method)
+  # Create for loop to calculate the predictions by calculating nearest neighbors
+  for (i in 1:m) {
 
-    #Calculate distances and nearest neighbors by calling Nearest_Neighbors function
-    #Nearest_Neighbors returns a list with distances and index_of_neighbors
-    if(is.null(p) == TRUE){
-      nearest <- Nearest_Neighbors(X = X_test, observation = X_pred[i, ], K = K , method = method)
-    }else{
-      nearest <- Nearest_Neighbors(X = X_test, observation = X_pred[i, ], K = K , method = method, p = p)
+    # Calculate distances and nearest neighbors by calling Nearest_Neighbors function
+    # Nearest_Neighbors returns a list with distances and index_of_neighbors
+    if (is.null(p) == TRUE) {
+      nearest <- Nearest_Neighbors(X = X_test, observation = X_pred[i, ], K = K, method = method)
+    } else {
+      nearest <- Nearest_Neighbors(X = X_test, observation = X_pred[i, ], K = K, method = method, p = p)
     }
     # Calculate predictions by calling Prediction_NN function
-    if(pred_weights == TRUE){
+    if (pred_weights == TRUE) {
       predict_vec[i] <- Prediction_NN(X = X_test[nearest[[1]], , drop = FALSE], Y = Y_test[nearest[[1]]], weights = nearest[[2]])
-    }else{
+    } else {
       predict_vec[i] <- Prediction_NN(X = X_test[nearest[[1]], , drop = FALSE], Y = Y_test[nearest[[1]]])
     }
   }
