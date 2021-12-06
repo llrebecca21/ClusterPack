@@ -1,10 +1,10 @@
 #' Minkowski Distance function
 #'
-#' @param X
-#' @param v
-#' @param p
+#' @param X n x p matrix or numeric dataframe
+#' @param v 1 x n vector
+#' @param p positive non-zero integer
 #'
-#' @return
+#' @return vector of (Minkowski) distances between the rows of X and a vector v
 #' @export
 #'
 #' @examples
