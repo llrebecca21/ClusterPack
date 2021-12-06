@@ -20,6 +20,11 @@ Nearest_Neighbors <- function(X, observation, K, method, p = NULL){
     dist <- Minkowski_Distance_c(X, observation, p)
   }
 
+  if(method == "Cos"){
+    #Apply Cos_Distance_c over the rows of X
+    dist <- Cos_Distance_c(X, observation)
+  }
+
   #Calculate the closest neighbors
   #sort the distances calculated
   distances <- sort(dist)[1:K]
