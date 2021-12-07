@@ -1,3 +1,14 @@
+#' Nearest_Neighbors function
+#'
+#' @param X n x m matrix
+#' @param observation 1 x m vector which is a row of the matrix X
+#' @param K positive integer that is the number of nearest-neighbors
+#' @param method Which distance equation will be used to calculate the nearest-neighbors.
+#' @param p If supplied, the positive integer used in calculating the Minkowski distance
+#'
+#' @return A list with first item is the 1 x K vector of indices of the nearest-neighbors and
+#'         the second item is the 1 x K vector of distances to the nearest-neighbors.
+#'
 Nearest_Neighbors <- function(X, observation, K, method, p = NULL) {
   # Calculate the nearest neighbors
 
