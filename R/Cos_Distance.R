@@ -1,5 +1,16 @@
+#' Cosine_Distance function
+#'
+#' @param X n x k matrix
+#' @param v 1 x k vector
+#'
+#' @return vector of (Cosine Similarity) Distances calculated between the rows of X and the vector v
+#' @export
+#'
+#' @examples
 Cos_Distance = function(X,v){
-  numerator <- colSums(t(X) * v)
-  denominator <- sqrt(rowSums(X * X) * sum(b*b))
-  return(1 - (numerator/denominator))
+  #Calculate the distance between the rows of X and the vector v
+  #Call the Cos_Distance_c function to calculate the distance
+  Cos_dist_vec <- Cos_Distance_c(X,v)
+
+  return(Cos_dist_vec)
 }
