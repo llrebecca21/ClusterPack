@@ -1,3 +1,13 @@
+#' Prediction_NN function
+#'
+#' @param X
+#' @param Y
+#' @param weights
+#'
+#' @return
+#'
+#'
+#' @examples
 Prediction_NN <- function(X, Y, weights = NULL) {
 
   # Description of inputs:
