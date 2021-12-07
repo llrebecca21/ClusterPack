@@ -1,18 +1,12 @@
 #' Prediction_NN function
 #'
-#' @param X
-#' @param Y
-#' @param weights
+#' @param X n x m matrix
+#' @param Y 1 x m vector which is a single row of the matrix X
+#' @param weights If supplied will be given the vector of distances calculated from the Nearest_Neighbors function
 #'
-#' @return
+#' @return vector of predicted labels
 #'
-#'
-#' @examples
 Prediction_NN <- function(X, Y, weights = NULL) {
-
-  # Description of inputs:
-  # X = X_test[nearest[[1]]
-  # Y = Y_test
 
   # If Y is a factor type:
   if (is.factor(Y) | is.character(Y)) {
