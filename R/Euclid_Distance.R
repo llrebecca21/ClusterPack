@@ -1,7 +1,7 @@
 #' Euclid_Distance function
 #'
-#' @param X n x k matrix
-#' @param v 1 x k vector
+#' @param X n x m matrix
+#' @param v 1 x m vector
 #'
 #' @return (Euclidean) distance between the rows of X and the vector v
 #' @export
