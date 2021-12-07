@@ -16,7 +16,7 @@
 #' @return  r x 1 vector of predicted labels for the X_pred dataframe
 #' @export
 #'
-#' @examples
+#' @examples {
 #' Using the built-in iris dataframe
 #'
 #' set.seed(1234)
@@ -33,6 +33,7 @@
 #' returns the following:
 #' [1] "setosa"   "versicolor"   "virginica"   "virginica"  "virginica"   "virginica"
 #' [7] ""virginica"   "virginica"   "versicolor"   "virginica"
+#' }
 KNN_Euc <- function(X_test, X_pred, Y_test, Y_pred, K, method = c("Euc", "Man", "Min", "Cos"), pred_weights = FALSE, p = NULL) {
   if (is.numeric(K) == FALSE) {
     stop("K needs to be an integer")
