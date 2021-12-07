@@ -1,7 +1,7 @@
 #' Minkowski Distance function
 #'
-#' @param X n x k matrix or numeric dataframe
-#' @param v 1 x k vector
+#' @param X n x m matrix or numeric dataframe
+#' @param v 1 x m vector
 #' @param p positive non-zero integer
 #'
 #' @return vector of (Minkowski) distances between the rows of X and a vector v
