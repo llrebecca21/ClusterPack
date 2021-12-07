@@ -1,5 +1,5 @@
 Package: ClusterPack
-Title: Contains KNN and K-Means algorithms and distance functions
+Title: Contains K-Nearest Neighbors algorithm, K-Means algorithm, and various distance functions.
 Version: 0.1.0
 Authors@R: 
     person(given = "Rebecca",
@@ -7,7 +7,7 @@ Authors@R:
            role = c("aut", "cre"),
            email = "llrebecca21@tamu.edu")
 Description: ClusterPack contains functions for KNN (K-Nearest Neighbors) algorithm,
-             K-Means algorithm. Contains Euclidean 
+             K-Means algorithm. 
 License: GPL (>= 3)
 Encoding: UTF-8
 LazyData: true
