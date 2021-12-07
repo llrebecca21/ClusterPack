@@ -8,9 +8,10 @@
 #'
 #' @examples
 Jaccard_Distance <- function(X, y){
-  A <- length(X)
+  #Need to obtain the length of the row of X
+  A <- length(X[1, ])
   B <- length(y)
-  inter_Xy <- length(intersection(X,y))
+  inter_Xy <- length(intersect(X,y))
   un_Xy <- A + B - lint_Xy
   return(inter_Xy/un_Xy)
 }
