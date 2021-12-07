@@ -1,9 +1,9 @@
 #' Manhattan_Distance function
 #'
-#' @param X
-#' @param v
+#' @param X n x p matrix
+#' @param v 1 x p vector
 #'
-#' @return
+#' @return column vector of (Manhattan) Distances calculated between the rows of X and vector v
 #' @export
 #'
 #' @examples
