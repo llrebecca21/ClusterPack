@@ -1,21 +1,18 @@
-#' Euclidean Distance
+#' Euclid_Distance function
 #'
-#' @param v1
-#' @param v2
+#' @param X n x k matrix
+#' @param v 1 x k vector
 #'
-#' @return
+#' @return (Euclidean) distance between the rows of X and the vector v
 #' @export
 #'
 #' @examples
 Euclid_Distance <- function(X, v){
-  #Check for same length of the vectors
-  #print(str(v1))
-  #print((v2))
+  #Check that the number of columns of X is the same length as vector v
   if(ncol(X)!= length(v)){
-    stop("The vectors are not of the same length")
+    stop("The number of columns of X is not equal to the length of v")
   }else{
     dist_Euc <- Euclid_Distance_c(X,v)
-    #dist_Euc <- sqrt(sum((v1-v2)^2))
   }
   return(dist_Euc)
 }
