@@ -8,7 +8,7 @@
 #' @export
 #'
 #' @examples
-Minkowski_distance <- function(X,v,p){
+Minkowski_Distance <- function(X,v,p){
     #Calculate Minkowski distance between the two vectors
     Mink_dist_vec <- Minkowski_Distance_c(X,v,p)
 
