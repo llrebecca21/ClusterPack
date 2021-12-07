@@ -1,9 +1,9 @@
 #' KNN_Euc function
 #'
-#' @param X_test n x k length numeric dataframe or matrix
-#' @param X_pred r x k length numeric dataframe or matrix
-#' @param Y_test n x 1 length dataframe or matrix  label column which is the label column for the X_test dataframe
-#' @param Y_pred r x 1 length dataframe or matrix label column which is the label column for the X_pred dataframe
+#' @param X_test n x m numeric dataframe or matrix
+#' @param X_pred r x m numeric dataframe or matrix
+#' @param Y_test n x 1 dataframe or matrix label column which is the label column for the X_test dataframe
+#' @param Y_pred r x 1 dataframe or matrix label column which is the label column for the X_pred dataframe
 #' @param K      integer value; the number of neighbors
 #' @param pred_weights default is FALSE; if TRUE will calculate weights for predictions of K-nearest Neighbors
 #'                     by calculating the inverse of the distances of the K-nearest neighbors if Y_test is of numeric type.
@@ -17,7 +17,7 @@
 #' @export
 #'
 #' @examples
-#' Using the built-in Iris dataframe
+#' Using the built-in iris dataframe
 #'
 #' set.seed(1234)
 #' n_fit = 10
