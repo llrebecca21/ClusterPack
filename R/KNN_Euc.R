@@ -1,7 +1,7 @@
 #' KNN_Euc function
 #'
-#' @param X_test n x p length numeric dataframe or matrix
-#' @param X_pred r x p length numeric dataframe or matrix
+#' @param X_test n x k length numeric dataframe or matrix
+#' @param X_pred r x k length numeric dataframe or matrix
 #' @param Y_test n x 1 length dataframe or matrix  label column which is the label column for the X_test dataframe
 #' @param Y_pred r x 1 length dataframe or matrix label column which is the label column for the X_pred dataframe
 #' @param K      integer value; the number of neighbors
