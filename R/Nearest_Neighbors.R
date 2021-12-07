@@ -6,23 +6,23 @@ Nearest_Neighbors <- function(X, observation, K, method, p = NULL) {
 
   # Calculate the distance by calling the distance function requested in method argument
   if (method == "Euc") {
-    # Apply Euclid_Distance_c over the rows of X
-    dist <- Euclid_Distance_c(X, observation)
+    # Apply Euclid_Distance over the rows of X
+    dist <- Euclid_Distance(X, observation)
   }
 
   if (method == "Man") {
-    # Apply Manhattan_Distance_c over the rows of X
-    dist <- Manhattan_Distance_c(X, observation)
+    # Apply Manhattan_Distance over the rows of X
+    dist <- Manhattan_Distance(X, observation)
   }
 
   if (method == "Min") {
-    # Apply Minkowski_Distance_c over the rows of X
-    dist <- Minkowski_Distance_c(X, observation, p)
+    # Apply Minkowski_Distance over the rows of X
+    dist <- Minkowski_Distance(X, observation, p)
   }
 
   if (method == "Cos") {
-    # Apply Cos_Distance_c over the rows of X
-    dist <- Cos_Distance_c(X, observation)
+    # Apply Cos_Distance over the rows of X
+    dist <- Cos_Distance(X, observation)
   }
 
   # Calculate the closest neighbors
