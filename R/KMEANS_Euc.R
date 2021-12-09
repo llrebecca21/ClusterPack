@@ -17,7 +17,7 @@
 #'            ncol = 3,
 #'            byrow = TRUE)
 #' K = 2
-#' KMEANS_Euc(X,K)
+#' KMEANS_Euc(X=X,K=K,M=NULL,numIter = 100)
 #' ## returns a column matrix: [0, 0, 1, 1]' or [1, 1, 0, 0]'
 #'
 KMEANS_Euc <- function(X, K, M = NULL, numIter = 100) {
