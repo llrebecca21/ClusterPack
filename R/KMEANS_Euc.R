@@ -19,6 +19,7 @@
 #' K = 2
 #' KMEANS_Euc(X,K)
 #' ## returns a column matrix: [0, 0, 1, 1]' or [1, 1, 0, 0]'
+#'
 KMEANS_Euc <- function(X, K, M = NULL, numIter = 100) {
   n <- nrow(X) # number of rows in X
   # Check that X is a matrix
@@ -37,7 +38,7 @@ KMEANS_Euc <- function(X, K, M = NULL, numIter = 100) {
   }
 
   # Call C++ MyKmeans_c function to implement the algorithm
-  Y <- KMEANS_Euc_c(X, K, M, numIter)
+  Y <- KMEANS_Euc_c(X = X, K = K, M = M, numIter = numIter)
 
   # Return the class assignments
   return(Y)
