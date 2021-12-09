@@ -42,7 +42,7 @@ r x 1 vector of predicted labels for the X_pred dataframe
 KNN_Euc function
 }
 \examples{
-# Using the built-in iris dataframe
+## Using the built-in iris dataframe
 
 set.seed(1234)
 n_fit = 10
@@ -55,8 +55,8 @@ Y_pred = iris[train_ind, ncol(iris)]
 
 KNN_Euc(X_test = X_test, X_pred = X_pred, Y_test = Y_test, Y_pred = Y_pred, K = 5)
 
-# returns the following:
-# [1] "setosa"   "versicolor"   "virginica"   "virginica"  "virginica"   "virginica"
-# [7] ""virginica"   "virginica"   "versicolor"   "virginica"
+## returns the following:
+## [1] "setosa"   "versicolor"   "virginica"   "virginica"  "virginica"   "virginica"
+## [7] ""virginica"   "virginica"   "versicolor"   "virginica"
 
 }
