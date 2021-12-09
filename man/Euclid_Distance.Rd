@@ -7,9 +7,9 @@
 Euclid_Distance(X, v)
 }
 \arguments{
-\item{X}{n x k matrix}
+\item{X}{n x m matrix}
 
-\item{v}{1 x k vector}
+\item{v}{1 x m vector}
 }
 \value{
 (Euclidean) distance between the rows of X and the vector v
