@@ -1,8 +1,8 @@
 #' KMEANS_Euc function
 #'
-#' @param X An \eqn{n \times p} matrix of data points
+#' @param X An n x p matrix of data points
 #' @param K Number of clusters given as an integer
-#' @param M Initial \eqn{K \times p} matrix of cluster centers
+#' @param M Initial K x p matrix of cluster centers
 #' @param numIter maximal number of iterations for the algorithm
 #'
 #' @return Returns a vector of length n of cluster assignments
@@ -18,7 +18,8 @@
 #'            byrow = TRUE)
 #' K = 2
 #' KMEANS_Euc(X, K)
-#' # returns a column matrix: [0, 0, 1, 1]' or [1, 1, 0, 0]'
+#' returns a column matrix:
+#' [0, 0, 1, 1]' or [1, 1, 0, 0]'
 KMEANS_Euc <- function(X, K, M = NULL, numIter = 100) {
   n <- nrow(X) # number of rows in X
   # Check that X is a matrix
