@@ -22,10 +22,15 @@ Returns a vector of length n of cluster assignments
 KMEANS_Euc function
 }
 \examples{
-{
-X = matrix(c( 1,  2,  3, 0,  1,  2, 9, 10, 11, 10, 11, 12), nrow = 4, ncol = 3, byrow = TRUE)
+X = matrix(c(1,  2,  3,
+             0,  1,  2,
+             9, 10, 11,
+            10, 11, 12),
+           nrow = 4,
+           ncol = 3,
+           byrow = TRUE)
 K = 2
-KMEANS_Euc(X, K)
-# returns the column matrix: [0, 0, 1, 1]' or [1, 1, 0, 0]'
-}
+KMEANS_Euc(X,K)
+# returns a column matrix: [0, 0, 1, 1]' or [1, 1, 0, 0]'
+
 }
