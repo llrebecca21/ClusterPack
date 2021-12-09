@@ -3,7 +3,7 @@ using namespace Rcpp;
 
 // [[Rcpp::export]]
 arma::uvec KMEANS_Euc_c(const arma::mat& X, int K,
-                      const arma::mat& M, int numIter = 100){
+                        const arma::mat& M, int numIter = 100){
   // All input is assumed to be correct
 
   // Initialize some parameters
