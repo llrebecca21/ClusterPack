@@ -1,1 +1,2 @@
-#' @importFrom stats weighted.mean
+#' @importFrom "stats", "weighted.mean"
+NULL
