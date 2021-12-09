@@ -2,16 +2,34 @@
 % Please edit documentation in R/KMEANS_Euc.R
 \name{KMEANS_Euc}
 \alias{KMEANS_Euc}
-\title{KMEANS function}
+\title{KMEANS_Euc function}
 \usage{
 KMEANS_Euc(X, K, M = NULL, numIter = 100)
 }
 \arguments{
-\item{numIter}{}
+\item{X}{An \eqn{n \times p} matrix of data points}
+
+\item{K}{Number of clusters given as an integer}
+
+\item{M}{Initial \eqn{K \times p} matrix of cluster centers}
+
+\item{numIter}{maximal number of iterations for the algorithm}
 }
 \value{
-
+Returns a vector of length n of cluster assignments
 }
 \description{
-KMEANS function
+KMEANS_Euc function
+}
+\examples{
+X = matrix(c( 1,  2,  3,
+              0,  1,  2,
+              9, 10, 11,
+              10, 11, 12),
+           nrow = 4,
+           ncol = 3,
+           byrow = TRUE)
+K = 2
+KMEANS_Euc(X, K)
+# returns a column matrix: [0, 0, 1, 1]' or [1, 1, 0, 0]'
 }
