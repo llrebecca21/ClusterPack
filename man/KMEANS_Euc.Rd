@@ -7,11 +7,11 @@
 KMEANS_Euc(X, K, M = NULL, numIter = 100)
 }
 \arguments{
-\item{X}{An \eqn{n \times p} matrix of data points}
+\item{X}{An n x p matrix of data points}
 
 \item{K}{Number of clusters given as an integer}
 
-\item{M}{Initial \eqn{K \times p} matrix of cluster centers}
+\item{M}{Initial K x p matrix of cluster centers}
 
 \item{numIter}{maximal number of iterations for the algorithm}
 }
@@ -31,5 +31,6 @@ X = matrix(c( 1,  2,  3,
            byrow = TRUE)
 K = 2
 KMEANS_Euc(X, K)
-# returns a column matrix: [0, 0, 1, 1]' or [1, 1, 0, 0]'
+returns a column matrix:
+[0, 0, 1, 1]' or [1, 1, 0, 0]'
 }
