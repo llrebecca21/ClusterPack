@@ -31,6 +31,5 @@ X = matrix(c(1,  2,  3,
            byrow = TRUE)
 K = 2
 KMEANS_Euc(X,K)
-# returns a column matrix: [0, 0, 1, 1]' or [1, 1, 0, 0]'
-
+## returns a column matrix: [0, 0, 1, 1]' or [1, 1, 0, 0]'
 }
