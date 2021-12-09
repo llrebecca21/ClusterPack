@@ -16,13 +16,13 @@ KNN_Euc(
 )
 }
 \arguments{
-\item{X_test}{n x k length numeric dataframe or matrix}
+\item{X_test}{n x m numeric dataframe or matrix}
 
-\item{X_pred}{r x k length numeric dataframe or matrix}
+\item{X_pred}{r x m numeric dataframe or matrix}
 
-\item{Y_test}{n x 1 length dataframe or matrix  label column which is the label column for the X_test dataframe}
+\item{Y_test}{n x 1 dataframe or matrix label column which is the label column for the X_test dataframe}
 
-\item{Y_pred}{r x 1 length dataframe or matrix label column which is the label column for the X_pred dataframe}
+\item{Y_pred}{r x 1 dataframe or matrix label column which is the label column for the X_pred dataframe}
 
 \item{K}{integer value; the number of neighbors}
 
