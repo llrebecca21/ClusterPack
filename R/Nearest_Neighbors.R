@@ -8,7 +8,6 @@
 #'
 #' @return A list with first item is the 1 x K vector of indices of the nearest-neighbors and
 #'         the second item is the 1 x K vector of distances to the nearest-neighbors.
-#'
 Nearest_Neighbors <- function(X, observation, K, method, p = NULL) {
   # Calculate the nearest neighbors
 
