@@ -7,9 +7,9 @@
 Manhattan_Distance(X, v)
 }
 \arguments{
-\item{X}{n x p matrix}
+\item{X}{n x m matrix}
 
-\item{v}{1 x p vector}
+\item{v}{1 x m vector}
 }
 \value{
 column vector of (Manhattan) Distances calculated between the rows of X and vector v
