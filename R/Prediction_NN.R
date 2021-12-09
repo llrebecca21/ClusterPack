@@ -5,7 +5,6 @@
 #' @param weights If supplied will be given the vector of distances calculated from the Nearest_Neighbors function
 #'
 #' @return vector of predicted labels
-#'
 Prediction_NN <- function(X, Y, weights = NULL) {
 
   # If Y is a factor type:
@@ -20,7 +19,7 @@ Prediction_NN <- function(X, Y, weights = NULL) {
     # determine easier way to state this
     if (is.null(weights) == FALSE) {
       Weight_give <- 1 / (weights)
-      pred <- weighted.mean(Y, Weight_give)
+      pred <- sum(Y * Weight_give)/sum(Y)
       # If not, weights are provided calculate the standard way
     } else {
       pred <- mean(Y)
