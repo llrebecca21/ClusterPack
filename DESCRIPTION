@@ -1,6 +1,6 @@
 Package: ClusterPack
-Title: Contains K-Nearest Neighbors algorithm, K-Means algorithm, and various distance functions.
-Version: 0.1.0
+Title: Contains K-Nearest Neighbors algorithm, K-Means algorithm, and various distance functions
+Version: 0.1.1
 Authors@R: 
     person(given = "Rebecca",
            family = "Lee",
