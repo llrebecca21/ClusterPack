@@ -1,11 +1,6 @@
 #include "RcppArmadillo.h"
 using namespace Rcpp;
 
-// X - n x p matrix
-// K - number of clusters
-// M - K x p cluster centers (always given)
-// numIter - maximal number of iterations
-
 // [[Rcpp::export]]
 arma::uvec KMEANS_Euc_c(const arma::mat& X, int K,
                       const arma::mat& M, int numIter = 100){
