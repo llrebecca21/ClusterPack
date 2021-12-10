@@ -1,6 +1,6 @@
 ## usethis namespace: start
 #' @importFrom Rcpp sourceCpp
-#' @useDynLib package_name, .registration = TRUE
+#' @useDynLib ClusterPack, .registration = TRUE
 ## usethis namespace: end
 NULL
 
