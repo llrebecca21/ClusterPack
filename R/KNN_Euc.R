@@ -5,13 +5,14 @@
 #' @param Y_test n x 1 dataframe or matrix label column which is the label column for the X_test dataframe
 #' @param Y_pred r x 1 dataframe or matrix label column which is the label column for the X_pred dataframe
 #' @param K      integer value; the number of neighbors
-#' @param pred_weights default is FALSE; if TRUE will calculate weights for predictions of K-nearest Neighbors
-#'                     by calculating the inverse of the distances of the K-nearest neighbors if Y_test is of numeric type.
 #' @param method Determines how distance will be calculated for nearest-neighbors. Choose from the following:
 #'               "Euc": will calculate using the Euclidean Distance
 #'               "Man": will calculate using the Manhattan Distance
 #'               "Min": will calculate using the Minkowski Distance
 #'               "Cos": will calculate using the Cosine-Similarity Distance
+#' @param pred_weights default is FALSE; if TRUE will calculate weights for predictions of K-nearest Neighbors
+#'                     by calculating the inverse of the distances of the K-nearest neighbors if Y_test is of numeric type.
+#' @param p integer to be used in the Minkowski Distance function if "Min" is chosen as distance method
 #'
 #' @return  r x 1 vector of predicted labels for the X_pred dataframe
 #' @export
