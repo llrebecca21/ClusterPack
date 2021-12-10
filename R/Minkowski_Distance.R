@@ -8,6 +8,10 @@
 #' @export
 #'
 #' @examples
+#' X = matrix(c(4,3,2,8,9,5), nrow = 3)
+#' v = c(10,7)
+#' p = 2
+#' Minkowski_Distance(X,v,p)
 Minkowski_Distance <- function(X,v,p){
     #Calculate Minkowski distance between the two vectors
     Mink_dist_vec <- Minkowski_Distance_c(X,v,p)
