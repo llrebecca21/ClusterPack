@@ -12,7 +12,7 @@
 #'               "Cos": will calculate using the Cosine-Similarity Distance
 #' @param pred_weights default is FALSE; if TRUE will calculate weights for predictions of K-nearest Neighbors
 #'                     by calculating the inverse of the distances of the K-nearest neighbors if Y_test is of numeric type.
-#' @param p integer to be used in the Minkowski Distance function if "Min" is chosen as distance method
+#' @param p takes values of positive integers or infinity (in the case of Sup Norm) to be used in the Minkowski Distance function if "Min" is chosen as distance method
 #'
 #' @return  r x 1 vector of predicted labels for the X_pred dataframe
 #' @export
@@ -72,6 +72,16 @@ KNN_Euc <- function(X_test, X_pred, Y_test, Y_pred, K, method = c("Euc", "Man", 
   if (ncol(X_test) != ncol(X_pred)) {
     stop("The number of columns of X_test and X_pred are not equal")
   }
+
+  if ((is.null(p) == FALSE) & (p != Inf)){
+    if(p %% 1 != 0){
+      stop("p needs to be an integer!")
+    }
+    if(p < 1){
+      stop("The lowest value p can take is 1")
+    }
+  }
+
   # Initialize a prediction vector and any other variables before for loop
   m <- nrow(X_pred)
   predict_vec <- c()
