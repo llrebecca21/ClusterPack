@@ -14,11 +14,12 @@
 #' Minkowski_Distance(X,v,p)
 #' #Returns the following:
 #' # [37,53,68]'
+#'
 Minkowski_Distance <- function(X,v,p){
   if (ncol(X) != length(v)){
     stop('The number of rows of X needs to be equal to the length of v')
   }else{
-    #Calculate Minkowski distance between the two vectors
+    #Calculate Minkowski distance between the rows of X and the vector v with p as specified by input
     Mink_dist_vec = Minkowski_Distance_c(X,v,p)
   }
   return(Mink_dist_vec)
