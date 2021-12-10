@@ -3,13 +3,16 @@
 #' @param X n x m matrix
 #' @param v 1 x m vector
 #'
-#' @return (Euclidean) distance between the rows of X and the vector v
+#' @return column matrix of the (Euclidean) distance between the rows of X and the vector v
 #' @export
 #'
 #' @examples
 #' X = matrix(c(17,40,20,39,30.1,55.5), nrow = 2)
 #' v = c(10.2,30,45)
 #' Euclid_Distance(X,v)
+#' # Returns the following:
+#' # [19.18984, 32.85255]'
+#'
 Euclid_Distance <- function(X, v){
   #Check that the number of columns of X is the same length as vector v
   if(ncol(X)!= length(v)){
