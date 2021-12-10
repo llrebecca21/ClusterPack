@@ -5,6 +5,7 @@
 #' @param weights If supplied will be given the vector of distances calculated from the Nearest_Neighbors function
 #'
 #' @return vector of predicted labels
+#'
 Prediction_NN <- function(X, Y, weights = NULL) {
 
   # If Y is a factor type:
