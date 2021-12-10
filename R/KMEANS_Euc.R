@@ -38,7 +38,7 @@ KMEANS_Euc <- function(X, K, M = NULL, numIter = 100) {
   }
 
   # Call C++ MyKmeans_c function to implement the algorithm
-  Y <- KMEANS_Euc_c(X = X, K = K, M = M, numIter = numIter)
+  Y = KMEANS_Euc_c(X = X, K = K, M = M, numIter = numIter)
 
   # Return the class assignments
   return(Y)

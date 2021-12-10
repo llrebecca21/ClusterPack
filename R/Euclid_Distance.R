@@ -15,7 +15,7 @@ Euclid_Distance <- function(X, v){
   if(ncol(X)!= length(v)){
     stop("The number of columns of X is not equal to the length of v")
   }else{
-    dist_Euc <- Euclid_Distance_c(X,v)
+    dist_Euc = Euclid_Distance_c(X,v)
   }
   return(dist_Euc)
 }

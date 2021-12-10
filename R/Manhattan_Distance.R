@@ -18,7 +18,7 @@ Manhattan_Distance <- function(X,v){
   }else{
     # Calculate Manhattan Distance between the rows of X and the vector v:
     # \sum(|a-b|)
-    man_dist_vec <- Manhattan_Distance_c(X,v)
+    man_dist_vec = Manhattan_Distance_c(X,v)
   }
   return(man_dist_vec)
 }
