@@ -8,7 +8,6 @@ KNN_Euc(
   X_test,
   X_pred,
   Y_test,
-  Y_pred,
   K,
   method = c("Euc", "Man", "Min", "Cos"),
   pred_weights = FALSE,
@@ -20,9 +19,7 @@ KNN_Euc(
 
 \item{X_pred}{r x m numeric dataframe or matrix}
 
-\item{Y_test}{n x 1 dataframe or matrix label column which is the label column for the X_test dataframe}
-
-\item{Y_pred}{r x 1 dataframe or matrix label column which is the label column for the X_pred dataframe}
+\item{Y_test}{n x 1 column vector of test observation labels}
 
 \item{K}{integer value; the number of neighbors}
 
@@ -35,7 +32,7 @@ KNN_Euc(
 \item{pred_weights}{default is FALSE; if TRUE will calculate weights for predictions of K-nearest Neighbors
 by calculating the inverse of the distances of the K-nearest neighbors if Y_test is of numeric type.}
 
-\item{p}{integer to be used in the Minkowski Distance function if "Min" is chosen as distance method}
+\item{p}{takes values of positive integers or infinity (in the case of Sup Norm) to be used in the Minkowski Distance function if "Min" is chosen as distance method}
 }
 \value{
 r x 1 vector of predicted labels for the X_pred dataframe
@@ -53,9 +50,8 @@ X_test = iris[-train_ind, -ncol(iris)]
 X_pred = iris[train_ind, -ncol(iris)]
 
 Y_test = iris[-train_ind, ncol(iris)]
-Y_pred = iris[train_ind, ncol(iris)]
 
-KNN_Euc(X_test = X_test, X_pred = X_pred, Y_test = Y_test, Y_pred = Y_pred, K = 5)
+KNN_Euc(X_test = X_test, X_pred = X_pred, Y_test = Y_test, K = 5)
 
 ## returns the following:
 ## [1] "setosa"   "versicolor"   "virginica"   "virginica"  "virginica"   "virginica"

@@ -23,4 +23,5 @@ v = c(10,15,3)
 Manhattan_Distance(X,v)
 # returns the following:
 # [15,16]'
+
 }

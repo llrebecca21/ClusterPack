@@ -26,4 +26,11 @@ p = 2
 Minkowski_Distance(X,v,p)
 #Returns the following:
 # [37,53,68]'
+
+X = matrix(c(1,2,3,4,5,6), nrow = 3)
+v = c(10,3)
+p = Inf
+Minkowski_Distance(X, v, p)
+# Returns the following:
+# [9, 8, 7]'
 }
