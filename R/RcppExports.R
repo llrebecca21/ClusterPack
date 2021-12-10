@@ -2,22 +2,22 @@
 # Generator token: 10BE3573-1514-4C36-9D1C-5A225CD40393
 
 Cos_Distance_c <- function(X, v) {
-    .Call('_ClusterPack_Cos_Distance_c', PACKAGE = 'ClusterPack', X, v)
+    .Call(`_ClusterPack_Cos_Distance_c`, X, v)
 }
 
 Euclid_Distance_c <- function(X, v) {
-    .Call('_ClusterPack_Euclid_Distance_c', PACKAGE = 'ClusterPack', X, v)
+    .Call(`_ClusterPack_Euclid_Distance_c`, X, v)
 }
 
 KMEANS_Euc_c <- function(X, K, M, numIter = 100L) {
-    .Call('_ClusterPack_KMEANS_Euc_c', PACKAGE = 'ClusterPack', X, K, M, numIter)
+    .Call(`_ClusterPack_KMEANS_Euc_c`, X, K, M, numIter)
 }
 
 Manhattan_Distance_c <- function(X, v) {
-    .Call('_ClusterPack_Manhattan_Distance_c', PACKAGE = 'ClusterPack', X, v)
+    .Call(`_ClusterPack_Manhattan_Distance_c`, X, v)
 }
 
 Minkowski_Distance_c <- function(X, v, p) {
-    .Call('_ClusterPack_Minkowski_Distance_c', PACKAGE = 'ClusterPack', X, v, p)
+    .Call(`_ClusterPack_Minkowski_Distance_c`, X, v, p)
 }
 
