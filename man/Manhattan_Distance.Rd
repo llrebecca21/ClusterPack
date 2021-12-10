@@ -12,14 +12,15 @@ Manhattan_Distance(X, v)
 \item{v}{1 x m vector}
 }
 \value{
-column vector of (Manhattan) Distances calculated between the rows of X and vector v
+column matrix of (Manhattan) Distances calculated between the rows of X and vector v
 }
 \description{
 Manhattan_Distance function
 }
 \examples{
-set.seed(101)
 X = matrix(c(1,17,19,21,1,0), nrow = 2)
 v = c(10,15,3)
 Manhattan_Distance(X,v)
+# returns the following:
+# [15,16]'
 }

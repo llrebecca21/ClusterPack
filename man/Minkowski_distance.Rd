@@ -14,7 +14,7 @@ Minkowski_Distance(X, v, p)
 \item{p}{positive non-zero integer}
 }
 \value{
-vector of (Minkowski) distances between the rows of X and a vector v
+column matrix of (Minkowski) distances between the rows of X and a vector v
 }
 \description{
 Minkowski Distance function
@@ -24,4 +24,6 @@ X = matrix(c(4,3,2,8,9,5), nrow = 3)
 v = c(10,7)
 p = 2
 Minkowski_Distance(X,v,p)
+#Returns the following:
+# [37,53,68]'
 }

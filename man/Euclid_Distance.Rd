@@ -12,7 +12,7 @@ Euclid_Distance(X, v)
 \item{v}{1 x m vector}
 }
 \value{
-(Euclidean) distance between the rows of X and the vector v
+column matrix of the (Euclidean) distance between the rows of X and the vector v
 }
 \description{
 Euclid_Distance function
@@ -21,4 +21,7 @@ Euclid_Distance function
 X = matrix(c(17,40,20,39,30.1,55.5), nrow = 2)
 v = c(10.2,30,45)
 Euclid_Distance(X,v)
+# Returns the following:
+# [19.18984, 32.85255]'
+
 }

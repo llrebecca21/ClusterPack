@@ -59,6 +59,6 @@ KNN_Euc(X_test = X_test, X_pred = X_pred, Y_test = Y_test, Y_pred = Y_pred, K = 
 
 ## returns the following:
 ## [1] "setosa"   "versicolor"   "virginica"   "virginica"  "virginica"   "virginica"
-## [7] ""virginica"   "virginica"   "versicolor"   "virginica"
+## [7] "virginica"   "virginica"   "versicolor"   "virginica"
 
 }

@@ -12,7 +12,7 @@ Cos_Distance(X, v)
 \item{v}{1 x m vector}
 }
 \value{
-vector of (Cosine Similarity) Distances calculated between the rows of X and the vector v
+column matrix of the (Cosine Similarity) Distances calculated between the rows of X and the vector v
 }
 \description{
 Cos_Distance function
@@ -21,4 +21,7 @@ Cos_Distance function
 X = matrix(c(1,1,0,1,1,0), nrow = 2, byrow = FALSE)
 v = c(0,0,1)
 Cos_Distance(X,v)
+# Returns the following:
+# [0.2928932, 1.0000000]'
+
 }
