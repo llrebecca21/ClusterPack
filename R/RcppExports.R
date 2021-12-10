@@ -21,3 +21,7 @@ Minkowski_Distance_c <- function(X, v, p) {
     .Call(`_ClusterPack_Minkowski_Distance_c`, X, v, p)
 }
 
+Sup_Norm_c <- function(X, v) {
+    .Call(`_ClusterPack_Sup_Norm_c`, X, v)
+}
+
