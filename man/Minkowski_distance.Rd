@@ -19,3 +19,9 @@ vector of (Minkowski) distances between the rows of X and a vector v
 \description{
 Minkowski Distance function
 }
+\examples{
+X = matrix(c(4,3,2,8,9,5), nrow = 3)
+v = c(10,7)
+p = 2
+Minkowski_Distance(X,v,p)
+}

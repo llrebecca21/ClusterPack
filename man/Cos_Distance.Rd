@@ -2,7 +2,7 @@
 % Please edit documentation in R/Cos_Distance.R
 \name{Cos_Distance}
 \alias{Cos_Distance}
-\title{Cosine_Distance function}
+\title{Cos_Distance function}
 \usage{
 Cos_Distance(X, v)
 }
@@ -15,5 +15,10 @@ Cos_Distance(X, v)
 vector of (Cosine Similarity) Distances calculated between the rows of X and the vector v
 }
 \description{
-Cosine_Distance function
+Cos_Distance function
+}
+\examples{
+X = matrix(c(1,1,0,1,1,0), nrow = 2, byrow = FALSE)
+v = c(0,0,1)
+Cos_Distance(X,v)
 }

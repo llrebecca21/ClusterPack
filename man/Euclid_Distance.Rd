@@ -17,3 +17,8 @@ Euclid_Distance(X, v)
 \description{
 Euclid_Distance function
 }
+\examples{
+X = matrix(c(17,40,20,39,30.1,55.5), nrow = 2)
+v = c(10.2,30,45)
+Euclid_Distance(X,v)
+}
