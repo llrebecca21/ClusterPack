@@ -15,8 +15,11 @@
 #'
 Cos_Distance = function(X,v){
   #Calculate the distance between the rows of X and the vector v
+  if (ncol(X) != length(v)){
+    stop('The number of rows of X needs to be equal to the length of v')
+  }else{
   #Call the Cos_Distance_c function to calculate the distance
   Cos_dist_vec <- Cos_Distance_c(X,v)
-
+  }
   return(Cos_dist_vec)
 }
