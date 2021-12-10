@@ -18,6 +18,9 @@
 Minkowski_Distance <- function(X,v,p){
   if (ncol(X) != length(v)){
     stop('The number of rows of X needs to be equal to the length of v')
+  }
+  if(p == Inf){
+    Mink_dist_vec = Sup_Norm_c(X,v)
   }else{
     #Calculate Minkowski distance between the rows of X and the vector v with p as specified by input
     Mink_dist_vec = Minkowski_Distance_c(X,v,p)
