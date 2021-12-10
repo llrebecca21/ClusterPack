@@ -12,6 +12,7 @@
 #' Manhattan_Distance(X,v)
 #' # returns the following:
 #' # [15,16]'
+#'
 Manhattan_Distance <- function(X,v){
   # Check that the number of columns of X and the length of v is equal
   if (ncol(X) != length(v)){
