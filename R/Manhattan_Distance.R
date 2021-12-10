@@ -13,7 +13,7 @@
 #' Manhattan_Distance(X,v)
 Manhattan_Distance <- function(X,v){
   # Check that the length of the vectors v1 and v2 are the same length
-  if (nrow(X) != length(v)){
+  if (ncol(X) != length(v)){
     stop('The number of rows of X needs to be equal to the length of v')
   }else{
     # Calculate Manhattan Distance between the rows of X and the vector v:
