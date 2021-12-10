@@ -34,6 +34,8 @@ KNN_Euc(
 
 \item{pred_weights}{default is FALSE; if TRUE will calculate weights for predictions of K-nearest Neighbors
 by calculating the inverse of the distances of the K-nearest neighbors if Y_test is of numeric type.}
+
+\item{p}{integer to be used in the Minkowski Distance function if "Min" is chosen as distance method}
 }
 \value{
 r x 1 vector of predicted labels for the X_pred dataframe
