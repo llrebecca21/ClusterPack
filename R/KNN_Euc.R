@@ -56,8 +56,6 @@ KNN_Euc <- function(X_test, X_pred, Y_test, K, method = c("Euc", "Man", "Min", "
     X_pred <- as.matrix(X_pred)
   }
 
-
-
   # compatibility checks for dimensionality
   if (nrow(X_test) != length(Y_test)) {
     stop("The number of rows of X_test does not match the length of Y_test")
@@ -67,12 +65,14 @@ KNN_Euc <- function(X_test, X_pred, Y_test, K, method = c("Euc", "Man", "Min", "
     stop("The number of columns of X_test and X_pred are not equal")
   }
 
-  if ((is.null(p) == FALSE) & (p != Inf)){
-    if(p %% 1 != 0){
-      stop("p needs to be an integer!")
-    }
-    if(p < 1){
-      stop("The lowest value p can take is 1")
+  if ((is.null(p) == FALSE)){
+    if(p != Inf){
+      if(p %% 1 != 0){
+        stop("p needs to be an integer!")
+      }
+      if(p < 1){
+        stop("The lowest value p can take is 1")
+      }
     }
   }
 
